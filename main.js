@@ -25,7 +25,7 @@ try {
         "utf8"
       )
     );
-
+    // TODO: if desired keys dont' exist prevent failure but provide feedback
     if (answers[filename].trim() === doc.on.schedule[0].cron.trim()) {
       console.log("Equal... you pass");
     } else {
