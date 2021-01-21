@@ -20,7 +20,10 @@ try {
     const filename = file.replace(".yml", "");
 
     const doc = yaml.load(
-      fs.readFileSync(`${GITHUB_WORKSPACE}/.github/workflows/${file}`, "utf8")
+      fs.readFileSync(
+        `${process.env.GITHUB_WORKSPACE}/.github/workflows/${file}`,
+        "utf8"
+      )
     );
 
     if (answers[filename].trim() === doc.on.schedule[0].cron.trim()) {
