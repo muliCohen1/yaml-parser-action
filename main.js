@@ -19,7 +19,9 @@ try {
   files.forEach((file) => {
     const filename = file.replace(".yml", "");
 
-    const doc = yaml.load(fs.readFileSync(`./${file}`, "utf8"));
+    const doc = yaml.load(
+      fs.readFileSync(`${GITHUB_WORKSPACE}/.github/workflows/${file}`, "utf8")
+    );
 
     if (answers[filename].trim() === doc.on.schedule[0].cron.trim()) {
       console.log("Equal... you pass");
