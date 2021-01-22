@@ -4,7 +4,8 @@ const yaml = require("js-yaml");
 const fs = require("fs");
 
 async function run() {}
-
+//blablabla
+//why not!
 try {
   token = core.getInput("github-token");
   files = core.getInput("files").split(",");
